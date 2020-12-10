@@ -2,7 +2,6 @@
 {
     public class ExchangeRate
     {
-        
         public int Id { get; set; }
 
         public string NameOfValue { get; set; }

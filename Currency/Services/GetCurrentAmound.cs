@@ -1,4 +1,5 @@
 ﻿using Currency.Models;
+using CurrencyConverterApp.Data;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -7,7 +8,7 @@ namespace Currency.Services
 {
     public class GetCurrentAmound
     {
-        public async Task GetResponse()
+        public async Task GetResponse(ApplicationDbContext db)
         {
             var httpClient = HttpClientFactory.Create();
             var url = "https://api.exchangeratesapi.io/latest";
@@ -18,10 +19,19 @@ namespace Currency.Services
                 var content = messege.Content;
                 
                 var data = await content.ReadAsAsync<RequestModel>();
-                
-                // Тук правим записа в базата
-                
-                Console.WriteLine(data); 
+
+                foreach (var (name,value) in data.rates)
+                {
+                    ExchangeRate exchange = new ExchangeRate
+                    {
+                        NameOfValue = name,
+                        AmoundOfValue = value,
+                        ConvertType = data.@base,
+                        RefreshedAt = data.date
+                    };
+                    db.ExchangeRates.Add(exchange);
+                    db.SaveChanges();
+                }
             }
             else
             {

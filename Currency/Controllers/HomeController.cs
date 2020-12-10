@@ -1,5 +1,6 @@
 ﻿using Currency.Models;
 using Currency.Services;
+using CurrencyConverterApp.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -12,12 +13,14 @@ namespace Currency.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IConfiguration configuration;
         private readonly GetCurrentAmound getCurrent;
+        private readonly ApplicationDbContext dbContext;
 
-        public HomeController(ILogger<HomeController> logger, IConfiguration configuration,GetCurrentAmound getCurrent)
+        public HomeController(ILogger<HomeController> logger, IConfiguration configuration,GetCurrentAmound getCurrent,ApplicationDbContext dbContext)
         {
             _logger = logger;
             this.configuration = configuration;
             this.getCurrent = getCurrent;
+            this.dbContext = dbContext;
         }
 
         public IActionResult Index()
@@ -33,7 +36,7 @@ namespace Currency.Controllers
         [HttpGet]
         public IActionResult GetCurrentAmound()
         {
-            getCurrent.GetResponse();
+            getCurrent.GetResponse(dbContext);
             
             return Redirect("/");
         }
