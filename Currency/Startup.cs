@@ -23,7 +23,7 @@ namespace Currency
         {
             services.AddControllersWithViews();
             services.AddSingleton<ApplicationDbContext>();
-            services.AddTransient<GetCurrentAmound>();
+            services.AddTransient<GetCurrentAmoundAsync>();
         }
 
         // This method gets called by the runtime. 
@@ -53,7 +53,7 @@ namespace Currency
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=GetCurrentAmound}/{id?}");
             });
         }
     }

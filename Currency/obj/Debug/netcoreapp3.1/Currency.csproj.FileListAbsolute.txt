@@ -135,7 +135,6 @@ C:\Users\Marian\source\repos\Currency\Currency\obj\Debug\netcoreapp3.1\Currency.
 C:\Users\Marian\source\repos\Currency\Currency\obj\Debug\netcoreapp3.1\Currency.TagHelpers.output.cache
 C:\Users\Marian\source\repos\Currency\Currency\obj\Debug\netcoreapp3.1\Currency.RazorCoreGenerate.cache
 C:\Users\Marian\source\repos\Currency\Currency\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\Marian\source\repos\Currency\Currency\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\Marian\source\repos\Currency\Currency\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\Marian\source\repos\Currency\Currency\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Marian\source\repos\Currency\Currency\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs

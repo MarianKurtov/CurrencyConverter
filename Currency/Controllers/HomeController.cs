@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
+using System.Threading.Tasks;
+using System.Linq;
 
 namespace Currency.Controllers
 {
@@ -12,10 +14,10 @@ namespace Currency.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IConfiguration configuration;
-        private readonly GetCurrentAmound getCurrent;
+        private readonly GetCurrentAmoundAsync getCurrent;
         private readonly ApplicationDbContext dbContext;
 
-        public HomeController(ILogger<HomeController> logger, IConfiguration configuration,GetCurrentAmound getCurrent,ApplicationDbContext dbContext)
+        public HomeController(ILogger<HomeController> logger, IConfiguration configuration,GetCurrentAmoundAsync getCurrent,ApplicationDbContext dbContext)
         {
             _logger = logger;
             this.configuration = configuration;
@@ -25,20 +27,22 @@ namespace Currency.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(dbContext);
         }
 
-        public IActionResult Privacy()
+        [HttpGet]
+        public IActionResult ReturnResult()
         {
+
             return View();
         }
 
         [HttpGet]
-        public IActionResult GetCurrentAmound()
+        public async Task<IActionResult> GetCurrentAmound()
         {
-            getCurrent.GetResponse(dbContext);
+           await getCurrent.GetResponseAsync(dbContext);
             
-            return Redirect("/");
+            return Redirect("/Home/Index");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

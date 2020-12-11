@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace Currency.Services
 {
-    public class GetCurrentAmound
+    public class GetCurrentAmoundAsync
     {
-        public async Task GetResponse(ApplicationDbContext db)
+        public async Task GetResponseAsync(ApplicationDbContext db)
         {
             var httpClient = HttpClientFactory.Create();
             var url = "https://api.exchangeratesapi.io/latest";
             HttpResponseMessage messege = await httpClient.GetAsync(url);
+            db.Database.EnsureDeleted();
+            db.Database.EnsureCreated();
 
             if (messege.StatusCode == System.Net.HttpStatusCode.OK)
             {

@@ -1,8 +1,42 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@model CurrencyConverterApp.Data.ApplicationDbContext
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Simple Currency Converter</title>
+</head>
+
+    <body>
+        <h1>Simple Currency Converter</h1>
+
+        <form action="Index" method="post">
+
+            <div>
+                <label for="From">From:</label>
+                    <select id="From">
+                        @foreach (var item in Model.ExchangeRates.Select(x => x.NameOfValue))
+                        {
+                            <option val="1">@item</option>
+                        }
+                    </select>
+
+                <label for="To">To:</label>
+                    <select id="To">
+                        @foreach (var item in Model.ExchangeRates.Select(x => x.NameOfValue))
+                        {
+                            <option val="1">@item</option>
+                        }
+                    </select>
+
+                <label for="Amound">Amound:</label><br>
+                <input type="text"/>
+            </div>
+
+            <input type="submit" value="Convert">
+
+        </form>
+    </body>
+</html>
