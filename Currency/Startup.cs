@@ -1,5 +1,5 @@
 using Currency.Services;
-using CurrencyConverterApp.Data;
+using Currency.Data;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

@@ -150,4 +150,4 @@ C:\Users\Marian\source\repos\Currency\Currency\obj\Debug\netcoreapp3.1\Currency.
 C:\Users\Marian\source\repos\Currency\Currency\obj\Debug\netcoreapp3.1\Razor\Views\Home\TakeCurrentcyAtTheMoment.cshtml.g.cs
 C:\Users\Marian\source\repos\Currency\Currency\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
 C:\Users\Marian\source\repos\Currency\Currency\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
-C:\Users\Marian\source\repos\Currency\Currency\obj\Debug\netcoreapp3.1\Currency.csprojAssemblyReference.cache
+C:\Users\Marian\source\repos\Currency\Currency\obj\Debug\netcoreapp3.1\Razor\Views\Home\ReturnResult.cshtml.g.cs

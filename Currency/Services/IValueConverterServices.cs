@@ -1,7 +1,9 @@
-﻿namespace Currency.Services
+﻿using Currency.Model;
+
+namespace Currency.Services
 {
     public interface IValueConverterServices
     {
-        public decimal ConvertAndReturnResult(string from, string to, decimal amound);
+        public decimal ConvertAndReturnResult(ResultModel resultModel);
     }
 }

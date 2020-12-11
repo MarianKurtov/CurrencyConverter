@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace CurrencyConverterApp.Data
+namespace Currency.Data
 {
     public class ApplicationDbContext : DbContext
     {

@@ -1,5 +1,5 @@
 ﻿using Currency.Models;
-using CurrencyConverterApp.Data;
+using Currency.Data;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;

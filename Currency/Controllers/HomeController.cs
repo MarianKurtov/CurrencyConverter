@@ -1,12 +1,13 @@
 ﻿using Currency.Models;
 using Currency.Services;
-using CurrencyConverterApp.Data;
+using Currency.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Linq;
+using Currency.Model;
 
 namespace Currency.Controllers
 {
@@ -25,22 +26,23 @@ namespace Currency.Controllers
             this.dbContext = dbContext;
         }
 
+
         public IActionResult Index()
         {
-            return View(dbContext);
+            return this.View();
         }
 
-        [HttpGet]
-        public IActionResult ReturnResult()
+        [HttpPost]
+        public IActionResult Index(ResultModel resultModel)
         {
-
-            return View();
+            return this.Json(resultModel);
         }
+
 
         [HttpGet]
         public async Task<IActionResult> GetCurrentAmound()
         {
-           await getCurrent.GetResponseAsync(dbContext);
+            await getCurrent.GetResponseAsync(dbContext);
             
             return Redirect("/Home/Index");
         }
