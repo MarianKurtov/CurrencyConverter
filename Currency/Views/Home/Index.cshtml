@@ -6,29 +6,23 @@
 
 
 <form asp-controller="Home" asp-action="Index" method="post" class="form">
-
     <div>
-        <input asp-for="from">From:
+        <select asp-for="from">
+            @foreach (var item in db.ExchangeRates.Select(x => x.NameOfValue))
+            {
+                <option val="1">@item</option>
+            }
+        </select>
 
-            @*<select asp-for="from">
-                @foreach (var item in db.ExchangeRates.Select(x => x.NameOfValue))
-                {
-                    <option val="1">@item</option>
-                }
-            </select>*@
+        <select asp-for="to">
+            @foreach (var item in db.ExchangeRates.Select(x => x.NameOfValue))
+            {
+                <option val="1">@item</option>
+            }
+        </select>
 
-        <input asp-for="to">To:
-            @*<select asp-for="from">
-                @foreach (var item in db.ExchangeRates.Select(x => x.NameOfValue))
-                {
-                    <option val="1">@item</option>
-                }
-            </select>*@
         <input asp-for="amound">Amound:<br>
-
-        @*<input type="text"/>*@
     </div>
-
     <input type="submit" value="Convert">
 </form>
 
