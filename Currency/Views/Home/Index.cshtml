@@ -4,25 +4,58 @@
 @inject Currency.Data.ApplicationDbContext db
 @model Currency.Model.ResultModel
 
+    <style>
+    body { background-image: url('https://previews.123rf.com/images/tupungato/tupungato1608/tupungato160800240/61427695-business-doodles-seamless-pattern-financial-drawing-illustration-.jpg'); background-repeat: repeat; background-attachment: fixed; background-position: center; }
+        h1 {
+            color: goldenrod;
+            font-size:70px; 
+            border-radius: 4px;
+            margin: 8px 0;
+        }
+        input[type=text], select {
+            width: 60%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type=submit] {
+            width: 60%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
 
-<form asp-controller="Home" asp-action="Index" method="post" class="form">
-    <div>
-        <select asp-for="from">
-            @foreach (var item in db.ExchangeRates.Select(x => x.NameOfValue))
-            {
-                <option val="1">@item</option>
-            }
-        </select>
+    <form asp-controller="Home" asp-action="Index" method="post" class="form">
 
-        <select asp-for="to">
-            @foreach (var item in db.ExchangeRates.Select(x => x.NameOfValue))
-            {
-                <option val="1">@item</option>
-            }
-        </select>
+        <h1 class="text-center" style="font-family:courier"><strong>$IMPLE CURRENCY CONVERTER</strong></h1>
 
-        <input asp-for="amound">Amound:<br>
-    </div>
-    <input type="submit" value="Convert">
-</form>
+        <div class="text-center">
+
+            <select asp-for="from">
+                @foreach (var item in db.ExchangeRates.Select(x => x.NameOfValue))
+                {
+                    <option val="1">@item</option>
+                }
+            </select>
+
+            <select asp-for="to">
+                @foreach (var item in db.ExchangeRates.Select(x => x.NameOfValue))
+                {
+                    <option val="1">@item</option>
+                }
+            </select>
+
+            <input asp-for="amound" placeholder="Amound"><br>
+            <input type="submit" value="Convert">
+        </div>
+
+    </form>
 

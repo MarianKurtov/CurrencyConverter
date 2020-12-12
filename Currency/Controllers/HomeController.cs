@@ -37,7 +37,7 @@ namespace Currency.Controllers
         {
             ValueConverterServices converterServices = new ValueConverterServices(dbContext);
             var result = converterServices.ConvertAndReturnResult(resultModel);
-            return this.Json(result);
+            return View();
         }
 
 
