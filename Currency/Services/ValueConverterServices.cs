@@ -15,19 +15,26 @@ namespace Currency.Services
         }
         public decimal ConvertAndReturnResult(ResultModel resultModel)
         {
-            var fromAfter = Convert.ToDecimal(db
-                .ExchangeRates
-                .Where(x => x.NameOfValue == resultModel.from)
-                .Select(s => s.AmoundOfValue).ToString());
-
-            var toAfter = Convert.ToDecimal(db
+            var fromAfter = db
+                 .ExchangeRates
+                 .Where(x => x.NameOfValue == resultModel.from)
+                 .Select(s => s.AmoundOfValue)
+                 .Take(1)
+                 .ToList();
+            var fAfter = Convert.ToDecimal(fromAfter[0]);
+            
+            var toAfter = db
                 .ExchangeRates
                 .Where(x => x.NameOfValue == resultModel.to)
-                .Select(s => s.AmoundOfValue).ToString());
+                .Select(s => s.AmoundOfValue)
+                .Take(1)
+                .ToList();
+            var tAfter = Convert.ToDecimal(toAfter[0]);
+            var rAfter = Convert.ToDecimal(resultModel.amound);
 
-            //decimal result = (toAfter / fromAfter) * resultModel.amound;
+            decimal result = (tAfter / fAfter)*rAfter;
 
-            return 0;//
+            return result;//
         }
     }
 }

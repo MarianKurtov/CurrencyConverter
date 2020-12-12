@@ -35,7 +35,9 @@ namespace Currency.Controllers
         [HttpPost]
         public IActionResult Index(ResultModel resultModel)
         {
-            return this.Json(resultModel);
+            ValueConverterServices converterServices = new ValueConverterServices(dbContext);
+            var result = converterServices.ConvertAndReturnResult(resultModel);
+            return this.Json(result);
         }
 
 
@@ -43,7 +45,6 @@ namespace Currency.Controllers
         public async Task<IActionResult> GetCurrentAmound()
         {
             await getCurrent.GetResponseAsync(dbContext);
-            
             return Redirect("/Home/Index");
         }
 
