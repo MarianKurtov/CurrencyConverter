@@ -37,11 +37,12 @@ namespace Currency.Controllers
         {
             ValueConverterServices converterServices = new ValueConverterServices(dbContext);
             var requestResult = converterServices.ConvertAndReturnResult(resultModel); // стойноста в decimal
+            // start services
             Result result = new Result
             {
-                result = requestResult
+                result = requestResult,
+                to = resultModel.to
             };
-            ;
             if (dbContext.Results.Any())
             {
                var deleteResult = dbContext.Results.FirstOrDefault();
@@ -50,7 +51,7 @@ namespace Currency.Controllers
             }
             dbContext.Results.Add(result);
             dbContext.SaveChanges();
-            ;
+            // end services
             return Redirect("/Home/ReturnResult");
 
         }

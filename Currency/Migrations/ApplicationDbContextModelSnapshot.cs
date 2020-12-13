@@ -28,6 +28,9 @@ namespace Currency.Migrations
                     b.Property<decimal>("result")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<string>("to")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Results");

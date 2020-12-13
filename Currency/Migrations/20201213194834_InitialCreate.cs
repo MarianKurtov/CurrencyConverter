@@ -28,7 +28,8 @@ namespace Currency.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    result = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    result = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    to = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

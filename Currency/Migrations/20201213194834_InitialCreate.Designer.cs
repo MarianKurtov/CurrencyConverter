@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Currency.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201213173134_InitialCreate")]
+    [Migration("20201213194834_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -29,6 +29,9 @@ namespace Currency.Migrations
 
                     b.Property<decimal>("result")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("to")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
