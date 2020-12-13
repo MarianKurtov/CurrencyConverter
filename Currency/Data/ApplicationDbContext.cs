@@ -1,4 +1,5 @@
-﻿using Currency.Models;
+﻿using Currency.Model;
+using Currency.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -25,5 +26,6 @@ namespace Currency.Data
             base.OnModelCreating(modelBuilder);
         }
         public virtual DbSet<ExchangeRate> ExchangeRates { get; set; }
+        public virtual DbSet<Result> Results { get; set; }
     }
 }

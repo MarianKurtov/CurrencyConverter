@@ -21,12 +21,28 @@ namespace Currency.Migrations
                 {
                     table.PrimaryKey("PK_ExchangeRates", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "Results",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    result = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Results", x => x.Id);
+                });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
                 name: "ExchangeRates");
+
+            migrationBuilder.DropTable(
+                name: "Results");
         }
     }
 }

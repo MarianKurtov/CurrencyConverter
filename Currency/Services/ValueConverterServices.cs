@@ -32,7 +32,7 @@ namespace Currency.Services
             var tAfter = Convert.ToDecimal(toAfter[0]);
             var rAfter = Convert.ToDecimal(resultModel.amound);
 
-            decimal result = (tAfter / fAfter)*rAfter;
+            decimal result = (tAfter / fAfter) * rAfter;
 
             return result;//
         }

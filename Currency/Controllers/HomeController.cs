@@ -36,10 +36,31 @@ namespace Currency.Controllers
         public IActionResult Index(ResultModel resultModel)
         {
             ValueConverterServices converterServices = new ValueConverterServices(dbContext);
-            var result = converterServices.ConvertAndReturnResult(resultModel);
-            return View();
+            var requestResult = converterServices.ConvertAndReturnResult(resultModel); // стойноста в decimal
+            Result result = new Result
+            {
+                result = requestResult
+            };
+            ;
+            if (dbContext.Results.Any())
+            {
+               var deleteResult = dbContext.Results.FirstOrDefault();
+               dbContext.Remove(deleteResult);
+               dbContext.SaveChanges();
+            }
+            dbContext.Results.Add(result);
+            dbContext.SaveChanges();
+            ;
+            return Redirect("/Home/ReturnResult");
+
         }
 
+        public IActionResult ReturnResult()
+        {
+            var print = dbContext.Results.FirstOrDefault();
+            ;
+            return this.View(print);
+        }
 
         [HttpGet]
         public async Task<IActionResult> GetCurrentAmound()
