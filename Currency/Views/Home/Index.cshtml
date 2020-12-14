@@ -8,7 +8,7 @@
     body { background-image: url('https://previews.123rf.com/images/tupungato/tupungato1608/tupungato160800240/61427695-business-doodles-seamless-pattern-financial-drawing-illustration-.jpg'); background-repeat: repeat; background-attachment: fixed; background-position: center; }
         h1 {
             color: goldenrod;
-            font-size: 80px;
+            font-size: 70px;
             border-radius: 4px;
             margin: 8px 0;
             -webkit-text-stroke: 1px black;
@@ -33,6 +33,15 @@
             border-radius: 4px;
             cursor: pointer;
         }
+        p {
+            color: goldenrod;
+            font-size: 40px;
+            border-radius: 4px;
+            margin: 8px 0;
+            -webkit-text-stroke: 1px black;
+            text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            font-family: courier;
+        }
     </style>
 
     <form asp-controller="Home" asp-action="Index" method="post" class="form">
@@ -40,21 +49,21 @@
         <h1 class="text-center" style="font-family:courier"><strong>$IMPLE CURRENCY CONVERTER</strong></h1>
 
         <div class="text-center">
-
+            <p><strong>From:</strong></p>
             <select asp-for="from">
                 @foreach (var item in db.ExchangeRates.Select(x => x.NameOfValue))
                 {
                     <option val="1">@item</option>
                 }
             </select>
-
+            <p><strong>To:</strong></p>
             <select asp-for="to">
                 @foreach (var item in db.ExchangeRates.Select(x => x.NameOfValue))
                 {
                     <option val="1">@item</option>
                 }
             </select>
-
+            <p><strong>Amound:</strong></p>
             <input asp-for="amound" placeholder="Amound"><br>
             <input type="submit" value="Convert">
         </div>
