@@ -151,4 +151,16 @@ C:\Users\Marian\source\repos\Currency\Currency\obj\Debug\netcoreapp3.1\Razor\Vie
 C:\Users\Marian\source\repos\Currency\Currency\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
 C:\Users\Marian\source\repos\Currency\Currency\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Users\Marian\source\repos\Currency\Currency\obj\Debug\netcoreapp3.1\Razor\Views\Home\ReturnResult.cshtml.g.cs
+C:\Users\Marian\source\repos\Currency\Currency\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\Marian\source\repos\Currency\Currency\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Marian\source\repos\Currency\Currency\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Marian\source\repos\Currency\Currency\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Marian\source\repos\Currency\Currency\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Marian\source\repos\Currency\Currency\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\Marian\source\repos\Currency\Currency\obj\Debug\netcoreapp3.1\Currency.csprojAssemblyReference.cache
+C:\Users\Marian\source\repos\Currency\Currency\bin\Debug\netcoreapp3.1\NLog.dll
+C:\Users\Marian\source\repos\Currency\Currency\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+C:\Users\Marian\source\repos\Currency\Currency\bin\Debug\netcoreapp3.1\NLog.Web.AspNetCore.dll
+C:\Users\Marian\source\repos\Currency\Currency\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Home\Index.cshtml.g.cs
+C:\Users\Marian\source\repos\Currency\Currency\obj\Debug\netcoreapp3.1\Razor\Areas\User\Views\Home\Index.cshtml.g.cs
+C:\Users\Marian\source\repos\Currency\Currency\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs

@@ -47,6 +47,7 @@ namespace Currency
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -54,6 +55,12 @@ namespace Currency
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=GetCurrentAmound}/{id?}");
+
+                endpoints.MapControllerRoute
+                (
+                 name: "Admin",
+                 pattern: "{area=Admin}/{controller=Home}/{action=Index}/{id?}"
+                );
             });
         }
     }
